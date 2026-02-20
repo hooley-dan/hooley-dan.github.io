@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Hooley</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.7; background: #fff; }
+        header { text-align: center; padding: 40px 20px 0; }
+        header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #222; }
+        nav { text-align: center; padding: 20px 0 10px; position: sticky; top: 0; background: #fff; z-index: 100; border-bottom: 1px solid #eee; }
+        nav a { display: inline-block; padding: 8px 18px; margin: 0 2px; text-decoration: none; color: #888; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: #222; }
+        .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 8px 18px; color: #333; }
+        main { max-width: 820px; margin: 0 auto; padding: 30px 24px 60px; }
+        .section { display: none; animation: fadeIn 0.3s ease; }
+        .section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { font-size: 1.4rem; color: #5a7a8a; font-weight: 400; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid #e8e8e8; }
+        h3 { font-size: 1.15rem; color: #444; margin: 28px 0 12px; font-weight: 600; }
+        .bio { display: flex; gap: 30px; align-items: flex-start; }
+        .bio img { width: 240px; border-radius: 4px; flex-shrink: 0; }
+        .bio-text p { margin-bottom: 14px; font-size: 1rem; }
+        .pub-list { list-style: none; padding: 0; }
+        .pub-list li { margin-bottom: 10px; line-height: 1.6; }
+        .pub-list a { color: #3a6b7c; text-decoration: none; }
+        .pub-list a:hover { text-decoration: underline; }
+        .pub-list em { color: #555; }
+        .course-list { list-style: none; padding: 0; column-count: 2; column-gap: 30px; }
+        .course-list li { padding: 3px 0; }
+        .award { background: #f8f8f8; border-left: 3px solid #5a7a8a; padding: 16px 20px; margin: 20px 0; border-radius: 2px; }
+        .award strong { color: #5a7a8a; }
+        .cv-button { display: inline-block; background: #444; color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 3px; font-size: 0.95rem; letter-spacing: 1px; transition: background 0.2s; }
+        .cv-button:hover { background: #222; }
+        .contact-grid { display: flex; gap: 50px; margin-bottom: 30px; }
+        .contact-grid > div { flex: 1; }
+        .contact-grid h3 { margin-top: 0; }
+        .contact-grid p { margin-bottom: 6px; }
+        .contact-grid a { color: #3a6b7c; text-decoration: none; }
+        .contact-grid a:hover { text-decoration: underline; }
+        .contact-photo { width: 100%; max-width: 650px; border-radius: 4px; }
+        .photo-caption { font-size: 0.85rem; color: #888; margin-top: 6px; font-style: italic; }
+        footer { text-align: center; padding: 30px; color: #aaa; font-size: 0.8rem; border-top: 1px solid #eee; }
+        @media (max-width: 700px) { .bio { flex-direction: column; align-items: center; text-align: center; } .bio img { width: 200px; } .contact-grid { flex-direction: column; gap: 20px; } .course-list { column-count: 1; } nav .nav-links { display: none; flex-direction: column; width: 100%; } nav .nav-links.open { display: flex; } nav a { padding: 10px 18px; } .hamburger { display: block; } }
+    </style>
+</head>
+<body>
+    <header><h1>Daniel Hooley</h1></header>
+    <nav>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active" data-section="home">Home</a>
+            <a href="#research" class="nav-link" data-section="research">Research</a>
+            <a href="#teaching" class="nav-link" data-section="teaching">Teaching</a>
+            <a href="#cv" class="nav-link" data-section="cv">CV</a>
+            <a href="#other" class="nav-link" data-section="other">Other</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
+    </nav>
+    <main>
+        <div id="home" class="section active">
+            <div class="bio">
+                <img src="https://www.danielhooley.com/uploads/2/6/3/1/26319141/editor/jls-687.jpg?1590426690" alt="Daniel Hooley">
+                <div class="bio-text">
+                    <p>I am an Instructor in Philosophy at Capilano University. I completed my PhD in philosophy at the University of Toronto in 2018. My research explores the political status of non-human animals and their place in our legal and political institutions. With this, I'm interested in effective altruism, existential risk, environmental ethics, and other questions in ethics and political philosophy.</p>
+                    <p>When I'm not doing philosophy I enjoy watching basketball, running, and playing any sport with a racquet.</p>
+                </div>
+            </div>
+        </div>
+        <div id="research" class="section">
+            <h2>Publications</h2>
+            <ul class="pub-list">
+                <li><a href="https://www.pdcnet.org/enviroethics/content/enviroethics_2022_0999_10_26_46">"Wild Animal Protectorates"</a> in <em>Environmental Ethics</em> (2022)</li>
+                <li><a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9781315768090-4/eating-dan-hooley-nathan-nobis">"Eating"</a> (with Nathan Nobis) in <em>The Routledge Companion to Environmental Ethics</em> (2022)</li>
+                <li><a href="https://link.springer.com/chapter/10.1007/978-3-319-93907-0_23">"Animals and Political Standing"</a> in <em>The Handbook of Philosophy and Public Policy</em>, Palgrave Macmillan (2018)</li>
+                <li><a href="http://rdcu.be/xs8V">"Political Agency, Citizenship, and Nonhuman Animals"</a> in <em>Res Publica</em> (2017)</li>
+                <li><a href="https://www.academia.edu/4509666/A_Moral_Argument_for_Veganism">"A Moral Argument for Veganism"</a> (with Nathan Nobis) in <em>Philosophy Comes to Dinner: Arguments on the Ethics of Eating</em>, Routledge (2016)</li>
+            </ul>
+            <h2>Book Reviews</h2>
+            <ul class="pub-list">
+                <li><a href="https://www.ingentaconnect.com/content/whp/ev/2022/00000031/00000005/art00010">Review of Eva Meijer's <em>When Animals Speak: Towards an Interspecies Democracy</em></a> in <em>Environmental Values</em> (2022)</li>
+                <li><a href="http://ndpr.nd.edu/news/68768-the-moral-rights-of-animals/">Review of <em>The Moral Rights of Animals</em></a> in <em>Notre Dame Philosophical Reviews</em> (2016)</li>
+                <li>Review of <em>Animal Politics and Political Animals</em> in <em>Journal of Animal Ethics</em> (2016)</li>
+                <li><a href="https://www.academia.edu/6009419/Moral_Animals_A_Review_of_Mark_Rowlands_Can_Animals_be_Moral">"Moral Animals? A Review of Mark Rowland's <em>Can Animals Be Moral?</em>"</a> in <em>Journal of Animal Ethics</em> (2014)</li>
+            </ul>
+            <h2>Works in Progress</h2>
+            <ul class="pub-list">
+                <li>"A Problem for the Special Moral Status of Persons" (Draft available)</li>
+            </ul>
+            <h2>Dissertation</h2>
+            <ul class="pub-list">
+                <li><a href="https://www.danielhooley.com/uploads/2/6/3/1/26319141/hooley_-_the_political_status_of_nonhuman_animals_final_draft.pdf">The Political Status of Nonhuman Animals</a></li>
+            </ul>
+        </div>
+        <div id="teaching" class="section">
+            <h2>Teaching Experience</h2>
+            <h3>Courses Taught</h3>
+            <ul class="course-list">
+                <li>Bioethics</li><li>Business Ethics</li><li>Climate Ethics and Climate Justice</li><li>Environmental Ethics</li><li>Ethics in Finance</li><li>Introduction to Critical Thinking</li><li>Introduction to Ethics</li><li>Introduction to Philosophy</li><li>Philosophy of Law</li>
+            </ul>
+            <div class="award">
+                <h3><strong>Martha Lile Love Award for Excellence in Teaching</strong></h3>
+                <p>In 2014, I was the recipient of the Martha Lile Love Award for Excellence in Teaching Philosophy for the Bioethics class I taught that summer. The recipient is chosen from graduate instructors in philosophy who taught courses on any of the three University of Toronto campuses during the previous academic year. The winner is selected by a department committee of professors, and the award is given for originality in course design and effectiveness in delivery.</p>
+            </div>
+            <h3>Teaching Capabilities</h3>
+            <p>Animal Ethics, Applied Ethics, Bioethics, Business Ethics, Contemporary Political Philosophy, Environmental Ethics, Ethical Theory, Ethics in Finance, Intro to Critical Thinking, Intro to Ethics, Intro to Philosophy, Intro to Political Philosophy, Philosophy of Law, Political Philosophy</p>
+        </div>
+        <div id="cv" class="section">
+            <h2>Curriculum Vitae</h2>
+            <p style="margin-bottom: 20px;">Download my full CV below:</p>
+            <a href="https://www.danielhooley.com/uploads/2/6/3/1/26319141/hooley_cv.pdf" class="cv-button" target="_blank">Download CV (PDF)</a>
+        </div>
+        <div id="other" class="section">
+            <h2>Public Philosophy</h2>
+            <ul class="pub-list">
+                <li><a href="http://knowinganimals.libsyn.com/podcast">Knowing Animals Podcast. Episode 55: Why be vegan with Dan Hooley</a> (January 2018)</li>
+                <li><a href="https://www.theglobeandmail.com/opinion/the-needs-of-smart-and-social-animals-cannot-be-met-in-captivity/article33278584/">"The needs of smart and social animals cannot be met in captivity"</a> (with Camille Labchuk) in The Globe and Mail (December 2016)</li>
+            </ul>
+        </div>
+        <div id="contact" class="section">
+            <h2>Contact Information</h2>
+            <div class="contact-grid">
+                <div><h3>Email</h3><p>hooley[dot]dan[at]gmail[dot]com</p><p>danielhooley[at]capilanou[dot]ca</p></div>
+                <div><h3>Other Pages</h3><p><a href="https://utoronto.academia.edu/DanHooley" target="_blank">Academia.edu</a></p><p><a href="http://philpapers.org/profile/37270" target="_blank">PhilPapers</a></p></div>
+            </div>
+            <img src="https://www.danielhooley.com/uploads/2/6/3/1/26319141/dsc01853.jpg" alt="Backpacking with friends at Skyline Divide Trail near Mt Baker" class="contact-photo">
+            <p class="photo-caption">Backpacking with friends. Skyline Divide Trail near Mt Baker. Photo by Brian Quarrella.</p>
+        </div>
+    </main>
+    <footer>&copy; Daniel Hooley</footer>
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('data-section');
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
+                document.querySelector('.nav-links').classList.remove('open');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            const link = document.querySelector('[data-section="' + hash + '"]');
+            if (link) link.click();
+        }
+    </script>
+</body>
+</html>
